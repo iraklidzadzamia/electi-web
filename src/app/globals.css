@@ -18,15 +18,17 @@ body {
 .snap-container {
   height: 100vh;
   overflow-y: scroll;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
+  /* Changed from mandatory to proximity for freer scrolling */
   scroll-behavior: smooth;
 }
 
 /* Scroll Snap Section */
 .snap-section {
-  height: 100vh;
+  height: 100dvh;
+  /* Ensure full device height */
   scroll-snap-align: start;
-  scroll-snap-stop: always;
+  /* scroll-snap-stop: always; Removed to prevent "stuck" feeling */
 }
 
 /* Headings use Playfair Display */
