@@ -215,14 +215,8 @@ function SectionTwo() {
                 transition={{ duration: 0.5 }}
                 className="flex flex-col md:flex-row items-center justify-center w-full max-w-7xl gap-8 md:gap-16 pb-32 md:pb-0"
             >
-                {/* Image */}
-                <motion.div
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, amount: 0.05 }}
-                    transition={{ duration: 0.5, ease: "easeOut" }}
-                    className="relative w-full md:w-1/2 aspect-[3/4] max-w-[450px] rounded-lg overflow-hidden"
-                >
+                {/* Image - Static for instant visibility */}
+                <div className="relative w-full md:w-1/2 aspect-[3/4] max-w-[450px] rounded-lg overflow-hidden">
                     <Image
                         src="/images/haircut.png"
                         alt="Professional Haircut"
@@ -233,7 +227,7 @@ function SectionTwo() {
                     />
                     {/* Subtle overlay for depth */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                </motion.div>
+                </div>
 
                 {/* Text */}
                 <motion.div
@@ -287,14 +281,8 @@ function SectionThree() {
                     </p>
                 </motion.div>
 
-                {/* Image */}
-                <motion.div
-                    initial={{ opacity: 0, x: 30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, amount: 0.05 }}
-                    transition={{ duration: 0.5, ease: "easeOut" }}
-                    className="relative w-full md:w-1/2 aspect-[3/4] max-w-[450px] rounded-lg overflow-hidden"
-                >
+                {/* Image - Static for instant visibility */}
+                <div className="relative w-full md:w-1/2 aspect-[3/4] max-w-[450px] rounded-lg overflow-hidden">
                     <Image
                         src="/images/beard.jpg"
                         alt="Professional Beard Grooming"
@@ -305,7 +293,7 @@ function SectionThree() {
                     />
                     {/* Subtle overlay for depth */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                </motion.div>
+                </div>
             </motion.div>
         </div>
     );
