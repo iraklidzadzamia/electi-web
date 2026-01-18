@@ -159,15 +159,20 @@ function SectionOne() {
                     </div>
                 </div>
 
-                {/* Scroll Indicator */}
-                <motion.div
-                    className="absolute bottom-12 md:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-                    animate={{ y: [0, 8, 0] }}
-                    transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                >
-                    <span className="text-white/40 text-xs tracking-[0.3em] uppercase">Scroll</span>
-                    <div className="w-[1px] h-12 bg-gradient-to-b from-white/60 to-transparent" />
-                </motion.div>
+            </motion.div>
+
+            {/* Scroll Indicator - Moved outside of content div to stick to bottom of viewport */}
+            <motion.div
+                className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, y: [0, 8, 0] }}
+                transition={{
+                    opacity: { duration: 1, delay: 1 },
+                    y: { duration: 1.5, repeat: Infinity, ease: "easeInOut" }
+                }}
+            >
+                <span className="text-white/40 text-xs tracking-[0.3em] uppercase">Scroll</span>
+                <div className="w-[1px] h-12 bg-gradient-to-b from-white/60 to-transparent" />
             </motion.div>
         </div>
     );
