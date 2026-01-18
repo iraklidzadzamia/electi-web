@@ -215,8 +215,8 @@ function SectionTwo() {
                 transition={{ duration: 0.5 }}
                 className="flex flex-col md:flex-row items-center justify-center w-full max-w-7xl gap-8 md:gap-16 pb-32 md:pb-0"
             >
-                {/* Image - Static for instant visibility */}
-                <div className="relative w-full md:w-1/2 aspect-[3/4] max-w-[450px] rounded-lg overflow-hidden">
+                {/* Image - Static with GPU forcing for persistent rendering */}
+                <div className="relative w-full md:w-1/2 h-[40vh] md:h-auto aspect-[3/4] max-w-[450px] rounded-lg overflow-hidden transform-gpu will-change-transform backface-hidden">
                     <Image
                         src="/images/haircut.png"
                         alt="Professional Haircut"
@@ -240,7 +240,7 @@ function SectionTwo() {
                     <div className="text-[10px] md:text-xs font-bold tracking-[0.3em] text-amber-400/80 mb-2 md:mb-4 border-l-2 border-amber-400/50 pl-4 uppercase">
                         Our Craft
                     </div>
-                    <h2 className="text-3xl md:text-6xl font-medium text-white mb-4 md:mb-6 leading-tight">
+                    <h2 className="text-3xl md:text-6xl font-medium text-white mb-2 md:mb-6 leading-tight">
                         Precision Haircut
                     </h2>
                     <p className="text-sm md:text-lg text-white/60 leading-relaxed max-w-md font-light">
@@ -260,7 +260,7 @@ function SectionThree() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true, amount: 0.05 }}
                 transition={{ duration: 0.5 }}
-                className="flex flex-col-reverse md:flex-row items-center justify-center w-full max-w-7xl gap-8 md:gap-16 pb-32 md:pb-0"
+                className="flex flex-col-reverse md:flex-row items-center justify-center w-full max-w-7xl gap-4 md:gap-16 pb-20 md:pb-0"
             >
                 {/* Text */}
                 <motion.div
@@ -273,7 +273,7 @@ function SectionThree() {
                     <div className="text-[10px] md:text-xs font-bold tracking-[0.3em] text-amber-400/80 mb-2 md:mb-4 border-r-2 border-amber-400/50 pr-4 uppercase">
                         The Art of Detail
                     </div>
-                    <h2 className="text-3xl md:text-6xl font-medium text-white mb-4 md:mb-6 leading-tight">
+                    <h2 className="text-3xl md:text-6xl font-medium text-white mb-2 md:mb-6 leading-tight">
                         Beard Grooming
                     </h2>
                     <p className="text-sm md:text-lg text-white/60 leading-relaxed max-w-md font-light">
@@ -281,8 +281,8 @@ function SectionThree() {
                     </p>
                 </motion.div>
 
-                {/* Image - Static for instant visibility */}
-                <div className="relative w-full md:w-1/2 aspect-[3/4] max-w-[450px] rounded-lg overflow-hidden">
+                {/* Image - Static with GPU forcing for persistent rendering */}
+                <div className="relative w-full md:w-1/2 h-[40vh] md:h-auto aspect-[3/4] max-w-[450px] rounded-lg overflow-hidden transform-gpu will-change-transform backface-hidden">
                     <Image
                         src="/images/beard.jpg"
                         alt="Professional Beard Grooming"
@@ -328,9 +328,9 @@ function SectionFour() {
             <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.2 }}
+                viewport={{ once: true, amount: 0.05 }}
                 transition={{ duration: 0.5 }}
-                className="relative w-44 h-44 md:w-64 md:h-64 mb-8 z-20"
+                className="relative w-32 h-32 md:w-64 md:h-64 mb-4 md:mb-8 z-20"
             >
                 <Image
                     src="/images/logo.png"
@@ -342,7 +342,7 @@ function SectionFour() {
             </motion.div>
 
             {/* Social Proof - Static for instant visibility */}
-            <div className="flex items-center gap-3 mb-6 z-20">
+            <div className="flex items-center gap-3 mb-4 md:mb-6 z-20">
                 <div className="flex -space-x-2">
                     <div className="w-8 h-8 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-xs font-bold text-black">★</div>
                     <div className="w-8 h-8 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-xs font-bold text-black">★</div>
@@ -352,31 +352,31 @@ function SectionFour() {
             </div>
 
             <div className="z-20">
-                <h2 className="text-3xl md:text-5xl font-bold text-white mb-3 tracking-tight leading-tight">
+                <h2 className="text-3xl md:text-5xl font-bold text-white mb-2 md:mb-3 tracking-tight leading-tight">
                     Experience the Difference
                 </h2>
-                <p className="text-white/60 text-base md:text-lg mb-4 max-w-md leading-relaxed mx-auto">
+                <p className="text-white/60 text-sm md:text-lg mb-4 max-w-md leading-relaxed mx-auto px-4">
                     Let yourself feel what it&apos;s like to be in the hands of true professionals.
                 </p>
-                <p className="text-white/40 text-sm mb-8 tracking-widest uppercase">
+                <p className="text-white/40 text-xs md:text-sm mb-6 md:mb-8 tracking-widest uppercase">
                     Korneli Kekelidze St, 8 • Tbilisi
                 </p>
             </div>
 
             {/* Primary CTA with glow effect - Static for instant visibility */}
-            <div className="flex flex-col md:flex-row gap-4 items-center mb-4 z-20">
+            <div className="flex flex-col md:flex-row gap-4 items-center mb-4 z-20 w-full max-w-sm md:max-w-none px-4">
                 <a
                     href="https://n1313179.alteg.io"
                     target="_blank"
                     rel="noreferrer"
-                    className="group relative px-12 py-5 bg-white text-[#050505] text-sm md:text-base font-bold tracking-[0.2em] uppercase rounded-sm overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_rgba(255,255,255,0.4)]"
+                    className="group relative w-full md:w-auto px-12 py-4 md:py-5 bg-white text-[#050505] text-sm md:text-base font-bold tracking-[0.2em] uppercase rounded-sm overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_rgba(255,255,255,0.4)]"
                 >
                     <span className="relative z-10">Book Appointment</span>
                     <span className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-200/50 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 </a>
                 <a
                     href="tel:+995571705705"
-                    className="group px-12 py-5 border border-white/20 text-white text-sm md:text-base font-bold tracking-[0.2em] uppercase rounded-sm transition-all duration-300 hover:border-white/60 hover:bg-white/5"
+                    className="group w-full md:w-auto px-12 py-4 md:py-5 border border-white/20 text-white text-sm md:text-base font-bold tracking-[0.2em] uppercase rounded-sm transition-all duration-300 hover:border-white/60 hover:bg-white/5"
                 >
                     +995 571 705 705
                 </a>
