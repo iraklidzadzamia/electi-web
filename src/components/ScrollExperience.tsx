@@ -9,19 +9,46 @@ export default function ScrollExperience() {
     const [isLoading, setIsLoading] = useState(true);
     const [progress, setProgress] = useState(0);
 
-    // Fake loading simulation since we are using static images
+    // Real preloading logic
     useEffect(() => {
-        const timer = setInterval(() => {
-            setProgress((prev) => {
-                if (prev >= 100) {
-                    clearInterval(timer);
-                    setTimeout(() => setIsLoading(false), 500);
-                    return 100;
-                }
-                return prev + 1;
+        const assetsToPreload = [
+            '/images/haircut.png',
+            '/images/beard.jpg',
+            '/images/final-poster.jpg',
+        ];
+
+        let loadedCount = 0;
+
+        const preloadImage = (src: string) => {
+            return new Promise((resolve, reject) => {
+                const img = new window.Image();
+                img.src = src;
+                img.onload = () => resolve(src);
+                img.onerror = () => resolve(src); // Resolve anyway to not block app
             });
-        }, 20);
-        return () => clearInterval(timer);
+        };
+
+        const loadAllAssets = async () => {
+            // Start with a small progress to show activity
+            setProgress(10);
+
+            const total = assetsToPreload.length;
+
+            // Preload images in parallel but track progress
+            const promises = assetsToPreload.map(async (src) => {
+                await preloadImage(src);
+                loadedCount++;
+                setProgress(10 + Math.floor((loadedCount / total) * 90));
+            });
+
+            await Promise.all(promises);
+
+            // Ensure we hit 100% and then hide
+            setProgress(100);
+            setTimeout(() => setIsLoading(false), 500);
+        };
+
+        loadAllAssets();
     }, []);
 
     return (
@@ -184,7 +211,7 @@ function SectionTwo() {
             <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ once: true, amount: 0.2 }}
+                viewport={{ once: true, amount: 0.05 }}
                 transition={{ duration: 0.5 }}
                 className="flex flex-col md:flex-row items-center justify-center w-full max-w-7xl gap-8 md:gap-16 pb-32 md:pb-0"
             >
@@ -192,7 +219,7 @@ function SectionTwo() {
                 <motion.div
                     initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
+                    viewport={{ once: true, amount: 0.05 }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
                     className="relative w-full md:w-1/2 aspect-[3/4] max-w-[450px] rounded-lg overflow-hidden"
                 >
@@ -212,8 +239,8 @@ function SectionTwo() {
                 <motion.div
                     initial={{ opacity: 0, x: 30 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+                    viewport={{ once: true, amount: 0.05 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
                     className="w-full md:w-1/2 flex flex-col justify-center items-start text-left"
                 >
                     <div className="text-[10px] md:text-xs font-bold tracking-[0.3em] text-amber-400/80 mb-2 md:mb-4 border-l-2 border-amber-400/50 pl-4 uppercase">
@@ -237,7 +264,7 @@ function SectionThree() {
             <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ once: true, amount: 0.2 }}
+                viewport={{ once: true, amount: 0.05 }}
                 transition={{ duration: 0.5 }}
                 className="flex flex-col-reverse md:flex-row items-center justify-center w-full max-w-7xl gap-8 md:gap-16 pb-32 md:pb-0"
             >
@@ -245,8 +272,8 @@ function SectionThree() {
                 <motion.div
                     initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+                    viewport={{ once: true, amount: 0.05 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
                     className="w-full md:w-1/2 flex flex-col justify-center items-end text-right"
                 >
                     <div className="text-[10px] md:text-xs font-bold tracking-[0.3em] text-amber-400/80 mb-2 md:mb-4 border-r-2 border-amber-400/50 pr-4 uppercase">
@@ -264,7 +291,7 @@ function SectionThree() {
                 <motion.div
                     initial={{ opacity: 0, x: 30 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
+                    viewport={{ once: true, amount: 0.05 }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
                     className="relative w-full md:w-1/2 aspect-[3/4] max-w-[450px] rounded-lg overflow-hidden"
                 >
@@ -330,7 +357,7 @@ function SectionFour() {
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
+                viewport={{ once: true, amount: 0.05 }}
                 transition={{ duration: 0.4 }}
                 className="flex items-center gap-3 mb-6 z-20"
             >
@@ -345,8 +372,8 @@ function SectionFour() {
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.4, delay: 0.1 }}
+                viewport={{ once: true, amount: 0.05 }}
+                transition={{ duration: 0.4 }}
                 className="z-20"
             >
                 <h2 className="text-3xl md:text-5xl font-bold text-white mb-3 tracking-tight leading-tight">
@@ -364,8 +391,8 @@ function SectionFour() {
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.4, delay: 0.1 }}
+                viewport={{ once: true, amount: 0.05 }}
+                transition={{ duration: 0.4 }}
                 className="flex flex-col md:flex-row gap-4 items-center mb-4 z-20"
             >
                 <a
