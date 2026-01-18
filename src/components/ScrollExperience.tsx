@@ -85,14 +85,18 @@ export default function ScrollExperience() {
 function SectionOne() {
     return (
         <div className="relative w-full h-full flex items-center justify-center">
-            {/* Video Background - Currently Image until video is provided */}
+            {/* Video Background */}
             <div className="absolute inset-0">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                    src="/images/hero.webp"
-                    alt="Electi Interior"
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    poster="/images/hero-poster.jpg"
                     className="absolute inset-0 w-full h-full object-cover object-center brightness-[0.6]"
-                />
+                >
+                    <source src="/images/hero.mp4" type="video/mp4" />
+                </video>
                 {/* Gradient Overlay for seamless blend */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-[#050505]" />
                 {/* Corner overlay to hide watermark */}
@@ -396,6 +400,6 @@ function SectionFour() {
                     Get Directions
                 </a>
             </div>
-        </motion.div>
+        </div>
     );
 }
