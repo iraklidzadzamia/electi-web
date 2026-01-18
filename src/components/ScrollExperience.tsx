@@ -184,16 +184,16 @@ function SectionTwo() {
             <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.8 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5 }}
                 className="flex flex-col md:flex-row items-center justify-center w-full max-w-7xl gap-8 md:gap-16 pb-32 md:pb-0"
             >
                 {/* Image */}
                 <motion.div
-                    initial={{ opacity: 0, x: -50 }}
+                    initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.6, delay: 0.1 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
                     className="relative w-full md:w-1/2 aspect-[3/4] max-w-[450px] rounded-lg overflow-hidden"
                 >
                     <Image
@@ -201,6 +201,8 @@ function SectionTwo() {
                         alt="Professional Haircut"
                         fill
                         className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        priority
                     />
                     {/* Subtle overlay for depth */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
@@ -208,10 +210,10 @@ function SectionTwo() {
 
                 {/* Text */}
                 <motion.div
-                    initial={{ opacity: 0, x: 50 }}
+                    initial={{ opacity: 0, x: 30 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
                     className="w-full md:w-1/2 flex flex-col justify-center items-start text-left"
                 >
                     <div className="text-[10px] md:text-xs font-bold tracking-[0.3em] text-amber-400/80 mb-2 md:mb-4 border-l-2 border-amber-400/50 pl-4 uppercase">
@@ -235,16 +237,16 @@ function SectionThree() {
             <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.8 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5 }}
                 className="flex flex-col-reverse md:flex-row items-center justify-center w-full max-w-7xl gap-8 md:gap-16 pb-32 md:pb-0"
             >
                 {/* Text */}
                 <motion.div
-                    initial={{ opacity: 0, x: -50 }}
+                    initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.6, delay: 0.1 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
                     className="w-full md:w-1/2 flex flex-col justify-center items-end text-right"
                 >
                     <div className="text-[10px] md:text-xs font-bold tracking-[0.3em] text-amber-400/80 mb-2 md:mb-4 border-r-2 border-amber-400/50 pr-4 uppercase">
@@ -260,10 +262,10 @@ function SectionThree() {
 
                 {/* Image */}
                 <motion.div
-                    initial={{ opacity: 0, x: 50 }}
+                    initial={{ opacity: 0, x: 30 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
                     className="relative w-full md:w-1/2 aspect-[3/4] max-w-[450px] rounded-lg overflow-hidden"
                 >
                     <Image
@@ -271,6 +273,7 @@ function SectionThree() {
                         alt="Professional Beard Grooming"
                         fill
                         className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 50vw"
                     />
                     {/* Subtle overlay for depth */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
@@ -307,10 +310,10 @@ function SectionFour() {
             </div>
 
             <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.8 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5 }}
                 className="relative w-44 h-44 md:w-64 md:h-64 mb-8 z-20"
             >
                 <Image
@@ -318,6 +321,7 @@ function SectionFour() {
                     alt="Electi Logo"
                     fill
                     className="object-contain drop-shadow-[0_0_40px_rgba(217,168,92,0.3)]"
+                    sizes="(max-width: 768px) 50vw, 33vw"
                 />
             </motion.div>
 
@@ -325,8 +329,8 @@ function SectionFour() {
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.4 }}
                 className="flex items-center gap-3 mb-6 z-20"
             >
                 <div className="flex -space-x-2">
@@ -340,8 +344,8 @@ function SectionFour() {
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.4, delay: 0.1 }}
                 className="z-20"
             >
                 <h2 className="text-3xl md:text-5xl font-bold text-white mb-3 tracking-tight leading-tight">
@@ -359,8 +363,8 @@ function SectionFour() {
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.4, delay: 0.1 }}
                 className="flex flex-col md:flex-row gap-4 items-center mb-4 z-20"
             >
                 <a
