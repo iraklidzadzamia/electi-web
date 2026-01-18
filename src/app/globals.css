@@ -24,9 +24,12 @@ body {
 }
 
 /* Scroll Snap Section */
+/* Scroll Snap Section */
 .snap-section {
   height: 100dvh;
   /* Ensure full device height */
+  overflow: hidden;
+  /* Fix for gray bar bleed */
   scroll-snap-align: start;
   /* scroll-snap-stop: always; Removed to prevent "stuck" feeling */
 }

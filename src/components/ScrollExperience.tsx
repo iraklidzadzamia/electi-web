@@ -353,29 +353,17 @@ function SectionFour() {
                 />
             </motion.div>
 
-            {/* Social Proof */}
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.05 }}
-                transition={{ duration: 0.4 }}
-                className="flex items-center gap-3 mb-6 z-20"
-            >
+            {/* Social Proof - Static for instant visibility */}
+            <div className="flex items-center gap-3 mb-6 z-20">
                 <div className="flex -space-x-2">
                     <div className="w-8 h-8 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-xs font-bold text-black">★</div>
                     <div className="w-8 h-8 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-xs font-bold text-black">★</div>
                     <div className="w-8 h-8 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-xs font-bold text-black">★</div>
                 </div>
                 <p className="text-white/60 text-sm">Trusted by <span className="text-amber-400 font-semibold">500+</span> gentlemen</p>
-            </motion.div>
+            </div>
 
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.05 }}
-                transition={{ duration: 0.4 }}
-                className="z-20"
-            >
+            <div className="z-20">
                 <h2 className="text-3xl md:text-5xl font-bold text-white mb-3 tracking-tight leading-tight">
                     Experience the Difference
                 </h2>
@@ -385,16 +373,10 @@ function SectionFour() {
                 <p className="text-white/40 text-sm mb-8 tracking-widest uppercase">
                     Korneli Kekelidze St, 8 • Tbilisi
                 </p>
-            </motion.div>
+            </div>
 
-            {/* Primary CTA with glow effect */}
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.05 }}
-                transition={{ duration: 0.4 }}
-                className="flex flex-col md:flex-row gap-4 items-center mb-4 z-20"
-            >
+            {/* Primary CTA with glow effect - Static for instant visibility */}
+            <div className="flex flex-col md:flex-row gap-4 items-center mb-4 z-20">
                 <a
                     href="https://n1313179.alteg.io"
                     target="_blank"
@@ -410,7 +392,7 @@ function SectionFour() {
                 >
                     +995 571 705 705
                 </a>
-            </motion.div>
+            </div>
 
             {/* Time clarity */}
             <p className="text-white/30 text-xs tracking-wide mb-8 z-20">
