@@ -14,6 +14,21 @@ body {
   overflow-x: hidden;
 }
 
+/* Scroll Snap Container */
+.snap-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+/* Scroll Snap Section */
+.snap-section {
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
 /* Headings use Playfair Display */
 h1,
 h2,

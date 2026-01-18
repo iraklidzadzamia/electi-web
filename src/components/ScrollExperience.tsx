@@ -87,47 +87,26 @@ export default function ScrollExperience() {
                 </a>
             </motion.div>
 
-            <div ref={containerRef} className="relative h-[500vh] bg-[#050505] text-white">
-                <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
-                    {/* Background / Atmosphere */}
-                    <div className="absolute inset-0 bg-[#050505]" />
+            <div ref={containerRef} className="snap-container">
+                {/* SECTION 1: HERO */}
+                <section className="snap-section relative bg-[#050505]">
+                    <SectionOne />
+                </section>
 
-                    {/* SECTION 1: HERO - Using main.png (hero.png) */}
-                    <SectionOne scrollYProgress={scrollYProgress} />
+                {/* SECTION 2: HAIRCUT */}
+                <section className="snap-section relative bg-[#050505]">
+                    <SectionTwo />
+                </section>
 
-                    {/* SECTION 2: BEARD BALM - Using beard_balm.png */}
-                    <SectionTwo scrollYProgress={scrollYProgress} />
+                {/* SECTION 3: BEARD */}
+                <section className="snap-section relative bg-[#050505]">
+                    <SectionThree />
+                </section>
 
-                    {/* SECTION 3: HAIR PASTE - Using hair_paste.png */}
-                    <SectionThree scrollYProgress={scrollYProgress} />
-
-                    {/* SECTION 4: FINAL BRANDING - Using logo.png */}
-                    <SectionFour scrollYProgress={scrollYProgress} />
-
-                    {/* Scroll Indicator */}
-                    <motion.div
-                        className="fixed bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-40"
-                        style={{ opacity: useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [1, 0, 0, 0]) }}
-                    >
-                        <span className="text-white/40 text-xs tracking-[0.3em] uppercase">Scroll</span>
-                        <motion.div
-                            animate={{ y: [0, 8, 0] }}
-                            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                            className="w-[1px] h-8 bg-gradient-to-b from-white/60 to-transparent"
-                        />
-                    </motion.div>
-
-                    {/* Global Progress Bar */}
-                    <motion.div
-                        className="fixed bottom-8 left-6 md:left-12 h-[2px] bg-white/10 w-24 rounded-full overflow-hidden z-40"
-                        style={{ opacity: useTransform(scrollYProgress, [0, 0.1, 0.95, 1], [0, 1, 1, 0]) }}
-                    >
-                        <motion.div
-                            className="h-full bg-gradient-to-r from-amber-400 to-amber-200"
-                            style={{ scaleX: scrollYProgress, transformOrigin: "0%" }}
-                        />
-                    </motion.div>
-                </div>
+                {/* SECTION 4: FINAL CTA */}
+                <section className="snap-section relative bg-[#050505]">
+                    <SectionFour />
+                </section>
             </div>
         </>
     );
@@ -227,7 +206,7 @@ function SectionTwo({ scrollYProgress }: { scrollYProgress: MotionValue<number> 
 
     return (
         <motion.div style={{ opacity }} className="absolute inset-0 flex items-center justify-center pointer-events-none px-6 md:px-24">
-            <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-7xl h-full md:h-auto gap-8 md:gap-16">
+            <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-7xl h-full md:h-auto gap-8 md:gap-16 pb-32 md:pb-0">
                 {/* Image */}
                 <motion.div style={{ x, scale: imageScale }} className="relative w-full md:w-1/2 aspect-[3/4] max-w-[450px] rounded-lg overflow-hidden">
                     <Image
@@ -245,13 +224,13 @@ function SectionTwo({ scrollYProgress }: { scrollYProgress: MotionValue<number> 
                     style={{ opacity: textOpacity, filter: useTransform(textBlur, (v) => `blur(${v}px)`) }}
                     className="w-full md:w-1/2 flex flex-col justify-center items-start text-left"
                 >
-                    <div className="text-xs font-bold tracking-[0.3em] text-amber-400/80 mb-4 border-l-2 border-amber-400/50 pl-4 uppercase">
+                    <div className="text-[10px] md:text-xs font-bold tracking-[0.3em] text-amber-400/80 mb-2 md:mb-4 border-l-2 border-amber-400/50 pl-4 uppercase">
                         Our Craft
                     </div>
-                    <h2 className="text-4xl md:text-6xl font-medium text-white mb-6 leading-tight">
+                    <h2 className="text-3xl md:text-6xl font-medium text-white mb-4 md:mb-6 leading-tight">
                         Precision Haircut
                     </h2>
-                    <p className="text-base md:text-lg text-white/60 leading-relaxed max-w-md font-light">
+                    <p className="text-sm md:text-lg text-white/60 leading-relaxed max-w-md font-light">
                         Every cut is tailored to your unique style. Our master barbers combine classic techniques with modern trends to create your perfect look.
                     </p>
                 </motion.div>
@@ -269,19 +248,19 @@ function SectionThree({ scrollYProgress }: { scrollYProgress: MotionValue<number
 
     return (
         <motion.div style={{ opacity }} className="absolute inset-0 flex items-center justify-center pointer-events-none px-6 md:px-24">
-            <div className="flex flex-col-reverse md:flex-row items-center justify-center w-full max-w-7xl h-full md:h-auto gap-8 md:gap-16">
+            <div className="flex flex-col-reverse md:flex-row items-center justify-center w-full max-w-7xl h-full md:h-auto gap-8 md:gap-16 pb-32 md:pb-0">
                 {/* Text */}
                 <motion.div
                     style={{ opacity: textOpacity, y }}
                     className="w-full md:w-1/2 flex flex-col justify-center items-end text-right"
                 >
-                    <div className="text-xs font-bold tracking-[0.3em] text-amber-400/80 mb-4 border-r-2 border-amber-400/50 pr-4 uppercase">
+                    <div className="text-[10px] md:text-xs font-bold tracking-[0.3em] text-amber-400/80 mb-2 md:mb-4 border-r-2 border-amber-400/50 pr-4 uppercase">
                         The Art of Detail
                     </div>
-                    <h2 className="text-4xl md:text-6xl font-medium text-white mb-6 leading-tight">
+                    <h2 className="text-3xl md:text-6xl font-medium text-white mb-4 md:mb-6 leading-tight">
                         Beard Grooming
                     </h2>
-                    <p className="text-base md:text-lg text-white/60 leading-relaxed max-w-md font-light">
+                    <p className="text-sm md:text-lg text-white/60 leading-relaxed max-w-md font-light">
                         Sharp lines, perfect shape. We sculpt your beard to complement your features, creating a distinguished look that commands attention.
                     </p>
                 </motion.div>
@@ -312,12 +291,15 @@ function SectionFour({ scrollYProgress }: { scrollYProgress: MotionValue<number>
         <motion.div style={{ opacity }} className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none px-6 text-center">
             {/* Video Background */}
             <div className="absolute inset-0 z-0">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                    src="/images/final.webp"
-                    alt="Electi Atmosphere"
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
                     className="absolute inset-0 w-full h-full object-cover brightness-[0.4]"
-                />
+                >
+                    <source src="/images/final.mp4" type="video/mp4" />
+                </video>
                 {/* Dark overlay */}
                 <div className="absolute inset-0 bg-black/50" />
                 {/* Corner overlay to hide watermark */}
