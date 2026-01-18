@@ -12,9 +12,9 @@ export default function ScrollExperience() {
     // Real preloading logic
     useEffect(() => {
         const assetsToPreload = [
-            '/images/haircut.png',
-            '/images/beard.jpg',
-            '/images/final-poster.jpg',
+            '/images/haircut.webp',
+            '/images/beard.webp',
+            '/images/final-poster.webp',
         ];
 
         let loadedCount = 0;
@@ -218,7 +218,7 @@ function SectionTwo() {
                 {/* Image - Static with GPU forcing for persistent rendering */}
                 <div className="relative w-full md:w-1/2 h-[40vh] md:h-auto aspect-[3/4] max-w-[450px] rounded-lg overflow-hidden transform-gpu will-change-transform backface-hidden">
                     <Image
-                        src="/images/haircut.png"
+                        src="/images/haircut.webp"
                         alt="Professional Haircut"
                         fill
                         className="object-cover"
@@ -284,7 +284,7 @@ function SectionThree() {
                 {/* Image - Static with GPU forcing for persistent rendering */}
                 <div className="relative w-full md:w-1/2 h-[40vh] md:h-auto aspect-[3/4] max-w-[450px] rounded-lg overflow-hidden transform-gpu will-change-transform backface-hidden">
                     <Image
-                        src="/images/beard.jpg"
+                        src="/images/beard.webp"
                         alt="Professional Beard Grooming"
                         fill
                         className="object-cover"
@@ -309,7 +309,7 @@ function SectionFour() {
                     loop
                     muted
                     playsInline
-                    poster="/images/final-poster.jpg"
+                    poster="/images/final-poster.webp"
                     className="absolute inset-0 w-full h-full object-cover brightness-[0.4]"
                 >
                     <source src="/images/final.mp4" type="video/mp4" />
@@ -333,7 +333,7 @@ function SectionFour() {
                 className="relative w-32 h-32 md:w-64 md:h-64 mb-4 md:mb-8 z-20"
             >
                 <Image
-                    src="/images/logo.png"
+                    src="/images/logo.webp"
                     alt="Electi Logo"
                     fill
                     className="object-contain drop-shadow-[0_0_40px_rgba(217,168,92,0.3)]"
