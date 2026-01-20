@@ -19,8 +19,7 @@ body {
   height: 100vh;
   overflow-y: scroll;
   scroll-snap-type: y proximity;
-  /* Changed from mandatory to proximity for freer scrolling */
-  scroll-behavior: smooth;
+  /* Removed scroll-behavior: smooth - causes jank on iOS Safari */
 }
 
 /* Scroll Snap Section */

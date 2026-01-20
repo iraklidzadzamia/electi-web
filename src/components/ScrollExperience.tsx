@@ -15,6 +15,7 @@ export default function ScrollExperience() {
             '/images/haircut.webp',
             '/images/beard.webp',
             '/images/final-poster.webp',
+            '/images/logo.webp',
         ];
 
         let loadedCount = 0;
@@ -322,24 +323,20 @@ function SectionFour() {
 
             {/* Ambient glow behind logo */}
             <div className="absolute inset-0 flex items-center justify-center z-10">
-                <div className="w-[400px] h-[400px] bg-gradient-radial from-amber-500/20 via-amber-500/5 to-transparent blur-[100px] rounded-full" />
+                <div className="w-[400px] h-[400px] bg-gradient-radial from-amber-500/20 via-amber-500/5 to-transparent blur-[60px] rounded-full" />
             </div>
 
-            <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.05 }}
-                transition={{ duration: 0.5 }}
-                className="relative w-32 h-32 md:w-64 md:h-64 mb-4 md:mb-8 z-20"
-            >
+            {/* Logo - Static for instant visibility */}
+            <div className="relative w-32 h-32 md:w-64 md:h-64 mb-4 md:mb-8 z-20">
                 <Image
                     src="/images/logo.webp"
                     alt="Electi Logo"
                     fill
                     className="object-contain drop-shadow-[0_0_40px_rgba(217,168,92,0.3)]"
                     sizes="(max-width: 768px) 50vw, 33vw"
+                    priority
                 />
-            </motion.div>
+            </div>
 
             {/* Social Proof - Static for instant visibility */}
             <div className="flex items-center gap-3 mb-4 md:mb-6 z-20">
