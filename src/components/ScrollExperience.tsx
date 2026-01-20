@@ -12,8 +12,8 @@ export default function ScrollExperience() {
     // Real preloading logic
     useEffect(() => {
         const assetsToPreload = [
-            '/images/haircut.webp',
-            '/images/beard.webp',
+            '/images/haircut.png',
+            '/images/beard.jpg',
             '/images/final-poster.webp',
             '/images/logo.webp',
         ];
@@ -219,7 +219,7 @@ function SectionTwo() {
                 {/* Image - Static with GPU forcing for persistent rendering */}
                 <div className="relative w-full md:w-1/2 h-[40vh] md:h-auto aspect-[3/4] max-w-[450px] rounded-lg overflow-hidden transform-gpu will-change-transform backface-hidden">
                     <Image
-                        src="/images/haircut.webp"
+                        src="/images/haircut.png"
                         alt="Professional Haircut"
                         fill
                         className="object-cover"
@@ -285,7 +285,7 @@ function SectionThree() {
                 {/* Image - Static with GPU forcing for persistent rendering */}
                 <div className="relative w-full md:w-1/2 h-[40vh] md:h-auto aspect-[3/4] max-w-[450px] rounded-lg overflow-hidden transform-gpu will-change-transform backface-hidden">
                     <Image
-                        src="/images/beard.webp"
+                        src="/images/beard.jpg"
                         alt="Professional Beard Grooming"
                         fill
                         className="object-cover"
@@ -361,7 +361,7 @@ function SectionFour() {
             </div>
 
             {/* Primary CTA with glow effect - Static for instant visibility */}
-            <div className="flex flex-col md:flex-row gap-4 items-center mb-4 z-20 w-full max-w-sm md:max-w-none px-4">
+            <div className="flex flex-col md:flex-row gap-4 items-center justify-center mb-4 z-20 px-4">
                 <a
                     href="https://n1313179.alteg.io"
                     target="_blank"
