@@ -312,7 +312,7 @@ function SectionFour() {
                     poster="/images/final-poster.webp"
                     className="absolute inset-0 w-full h-full object-cover brightness-[0.4]"
                 >
-                    <source src="/images/final.mp4" type="video/mp4" />
+                    <source src="/images/snaptik_7597251808532237586_v2.mp4" type="video/mp4" />
                 </video>
                 {/* Dark overlay */}
                 <div className="absolute inset-0 bg-black/50" />
